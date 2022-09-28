@@ -1,0 +1,10 @@
+{
+	"apiVersion": 2,
+	"name": "mtma/youtube-lazyload",
+	"title": "YouTube Video (Lazyload)",
+	"icon": "video-alt3",
+	"category": "widgets",
+	"editorScript": "file:index.js",
+	"script": "file:youtube.js",
+	"style": "file:./style-index.css"
+}

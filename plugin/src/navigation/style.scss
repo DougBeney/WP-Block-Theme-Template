@@ -1,0 +1,249 @@
+$navbreakpoint: 1170px;
+$navitem_spacing: 20px;
+$navbtn_transition: 120ms ease-in;
+$navbtn_borderradius: 2px;
+
+$nav_link_color: black;
+$nav_link_color_hover: black;
+$lightnav_link_color: #ccc;
+$lightnav_link_color_hover: white;
+
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
+}
+
+header nav {
+	background: #fff;
+}
+
+.fixed-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  width: 100%;
+
+  // .main-nav.expanded {
+  // 	  background: #2f2f2f
+  // }
+}
+
+body.admin-bar .fixed-nav {
+	top: 32px;
+}
+
+
+.main-nav {
+	position: relative;
+	padding: 40px 10%;
+	display: flex;
+	font-weight: 400;
+	align-items: center;
+	width: 100%;
+	box-sizing: border-box;
+
+	.mobile-only {
+		display: none;
+	}
+
+	> div {
+		flex-grow: 1;
+	}
+
+	a {
+		text-decoration: none;
+		color: $nav_link_color;
+		letter-spacing: 2px;
+		font-size: 1em;
+		&:hover {
+			color: $nav_link_color_hover;
+		}
+	}
+
+	.logo img {
+		width: auto;
+		max-height: 40px;
+		max-width: 100%;
+		vertical-align: middle;
+	}
+
+	.menu-items {
+		text-align: right;
+		@media screen and (max-width: $navbreakpoint) {
+			display: none;
+		}
+		ul {
+			display: inline;
+			list-style: none;
+			padding: 0;
+			justify-content: flex-end;
+			text-align: right;
+			@media screen and (max-width: $navbreakpoint) {
+				text-align: left;
+			}
+			li {
+				padding-right: $navitem_spacing;
+				display: inline;
+				@media screen and (max-width: $navbreakpoint) {
+					display: block;
+					font-size: 2em;
+					margin-bottom: $navitem_spacing;
+				}
+			}
+		}
+	}
+
+	.nav-cta {
+		flex-grow: 0;
+		text-align: right;
+	}
+
+	.mtma-button-a {
+		white-space: nowrap;
+		background: none;
+		border-color: #000;
+		padding: 15px 30px;
+		font-weight: normal;
+		display: inline;
+		letter-spacing: 1px;
+		z-index: 1;
+		&:after {
+			background: #000;
+		}
+		&:hover {
+			color: #fff;
+			background: none;
+		}
+	}
+
+	button.hamburger {
+		display: none;
+		outline: 0;
+		border: 0;
+		background: none;
+		margin-left: 20px;
+		align-items: center;
+		justify-content: center;
+
+		@media screen and (max-width: $navbreakpoint) {
+			display: inline;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	// space saver
+	@media screen and (max-width: 1378px) {
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+
+	@media screen and (max-width: $navbreakpoint) {
+		padding: 15px 5%;
+		overflow-y: hidden;
+		position: sticky;
+		top: 0;
+		background: rgba(255,255,255, 0.9);
+		backdrop-filter: blur(4px);
+
+		.mobile-only {
+			display: initial;
+		}
+
+		&.expanded {
+			z-index: 999;
+			position: fixed;
+			display: flex;
+			flex-wrap: wrap;
+			background: rgba(0,0,0, 0.9) !important;
+			backdrop-filter: blur(4px);
+
+			#main-nav-hamburger {
+				position: absolute;
+				top: 15px;
+				right: 5%;
+				z-index: 999;
+			}
+
+			svg {
+				fill: #fff;
+			}
+
+			img {
+				filter: invert(100%);
+			}
+
+			.menu-items {
+				margin: $navitem_spacing 0;
+				display: block;
+
+				transform: translateX(-100%);
+				-webkit-transform: translateX(-100%);
+				animation: slide-in 0.5s forwards;
+				-webkit-animation: slide-in 0.5s forwards;
+			}
+			@media screen and (max-width: $navbreakpoint) {
+				.mtma-button-a {
+					border-color: #fff;
+				}
+			}
+		}
+
+		a {
+			font-size: 0.6em;
+			color: #fff;
+			font-weight: normal;
+		}
+		.mtma-button-a {
+			padding: 10px 15px;
+			white-space: nowrap;
+			letter-spacing: 0;
+		}
+	}
+}
+
+.header-light {
+	.main-nav {
+		background: rgba(0,0,0,0);
+		&.expanded {
+			img {
+				filter: none;
+			}
+		}
+	}
+
+	a {
+		color: $lightnav_link_color;
+		&:hover {
+			color: $lightnav_link_color_hover;
+		}
+	}
+	.nav-button {
+		color: $lightnav_link_color;
+		border-color: $lightnav_link_color;
+	}
+	#main-nav-hamburger {
+		svg {
+			fill: #fff;
+		}
+	}
+
+	.mtma-button-a {
+		/* background: none; */
+		border-color: #fff;
+		&:after {
+			background: #fff;
+		}
+		&:hover {
+			color: #000;
+			/* background: none; */
+		}
+	}
+
+	.social-link {
+		@media screen and (max-width: 1294px) {
+			display: none;
+		}
+	}
+}

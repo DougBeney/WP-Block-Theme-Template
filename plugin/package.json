@@ -1,0 +1,18 @@
+{
+  "name": "mtma-custom-blocks",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": ">6"
+  },
+  "dependencies": {
+    "@wordpress/block-editor": "^9.3.0",
+    "@wordpress/components": "^19.7.0"
+  }
+}

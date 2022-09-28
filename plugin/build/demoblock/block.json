@@ -1,0 +1,10 @@
+{
+  "apiVersion": 2,
+  "name": "mtma/demoblock",
+  "title": "Demo Block (Mark Thomas Men's Apparel)",
+  "icon": "universal-access-alt",
+  "category": "layout",
+  "editorScript": "file:index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

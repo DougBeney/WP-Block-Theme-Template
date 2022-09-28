@@ -1,0 +1,23 @@
+{
+    "version": 1,
+	"supports": {
+
+	},
+	"settings": {
+
+	},
+	"typography": {
+		"fontFamilies": [
+			{
+				"fontFamily": "\"Montserrat\", sans-serif",
+				"name": "Montserrat",
+				"slug": "montserrat"
+			}
+		]
+	},
+	"styles": {
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--montserrat)"
+		}
+	}
+}

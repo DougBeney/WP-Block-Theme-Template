@@ -1,0 +1,11 @@
+{
+	"apiVersion": 2,
+	"name": "mtma/nav",
+	"title": "Theme Navigation",
+	"icon": "menu",
+	"category": "theme",
+	"editorScript": "file:index.js",
+	"script": "file:nav.js",
+	"style": "file:./style-index.css",
+	"editorStyle": "file:./index.css"
+}

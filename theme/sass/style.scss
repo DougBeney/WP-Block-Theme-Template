@@ -1,0 +1,21 @@
+/*!
+Theme Name: Dougie Gutenberg Theme Template
+Theme URI: https://floemedia.com
+Author: Dougie Beney
+Author URI: https://dougie.io
+Version: 1
+*/
+
+@import '../lib/normalize';
+
+// Useful mixin for responsive code
+@mixin media($size) {
+	@media screen and (max-width: $size) {
+		@content;
+	}
+}
+
+// Why not?
+html {
+	scroll-behavior: smooth;
+}
